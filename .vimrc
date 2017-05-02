@@ -15,6 +15,8 @@ Bundle 'tomasr/molokai'
 Bundle "bling/vim-airline"
 Bundle "kien/ctrlp.vim"
 Bundle 'Raimondi/delimitMate'
+Bundle 'fatih/vim-go'
+Bundle 'scrooloose/syntastic'
 
 call vundle#end()            " required
 "filetype plugin indent on    " required
@@ -33,6 +35,18 @@ set expandtab    " 将制表符扩展为空格
 set tabstop=4   " 设置编辑时制表符占用空格数
 set scrolloff=5
 set ruler
+
+" ======= syntastic ========= "
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_php_checkers=['php', 'phpcs']
+let g:syntastic_php_phpcs_args=' --standard=PSR2 -n'
 
 "molokai scheme
 "let g:molokai_original = 1
