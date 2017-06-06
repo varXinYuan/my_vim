@@ -3,6 +3,21 @@ set encoding=utf-8
 set fileencoding=utf-8
 filetype off                  " required
 
+" tmux设置 BEGIN
+if exists('$TMUX')
+  set term=screen-256color
+endif
+if exists('$ITERM_PROFILE')
+  if exists('$TMUX') 
+    let &t_SI = "<Esc>[3 q"
+    let &t_EI = "<Esc>[0 q"
+  else
+    let &t_SI = "<Esc>]50;CursorShape=1x7"
+    let &t_EI = "<Esc>]50;CursorShape=0x7"
+  endif
+end
+" tmux设置 END
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -17,24 +32,30 @@ Bundle "kien/ctrlp.vim"
 Bundle 'Raimondi/delimitMate'
 Bundle 'fatih/vim-go'
 Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
 
 call vundle#end()            " required
 "filetype plugin indent on    " required
 
-"colorscheme elflord
-"colorscheme molokai
 colorscheme monokai
 set nu
 set mouse=vi
 syntax on  "~G�~J�语~U~X亮
 syntax enable 
 set cursorline     "当前行高亮
+"hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE    "高亮行颜色
 set hlsearch 
+hi Search ctermfg=17 ctermbg=190 guifg=#00005f guibg=#dfff00
 set autoindent
 set expandtab    " 将制表符扩展为空格
 set tabstop=4   " 设置编辑时制表符占用空格数
 set scrolloff=5
 set ruler
+
+" ========Tagbar======== "
+nmap <F9> :TagbarToggle<CR>
+" 启动时自动focus
+"let g:tagbar_autofocus = 1
 
 " ======= syntastic ========= "
 set statusline+=%#warningmsg#
