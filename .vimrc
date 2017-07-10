@@ -1,7 +1,8 @@
 set nocompatible              " be iMproved, required
 set encoding=utf-8
 set fileencoding=utf-8
-filetype off                  " required
+" filetype off                  " required
+"filetype plugin indent on
 
 " tmux设置 BEGIN
 if exists('$TMUX')
@@ -33,6 +34,9 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'fatih/vim-go'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
+" Bundle 'yonchu/accelerated-smooth-scroll'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'scrooloose/nerdcommenter'
 
 call vundle#end()            " required
 "filetype plugin indent on    " required
@@ -51,11 +55,22 @@ set expandtab    " 将制表符扩展为空格
 set tabstop=4   " 设置编辑时制表符占用空格数
 set scrolloff=5
 set ruler
+" set background=dark
 
 " ========Tagbar======== "
 nmap <F9> :TagbarToggle<CR>
 " 启动时自动focus
 "let g:tagbar_autofocus = 1
+
+" ======= 缩进显示 ======== "
+" let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_guide_size = 1
+" "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+" "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+" "hi IndentGuidesOdd  ctermbg=black
+" " highlight tabs and trailing spaces
+set list
+set listchars=tab:>-,trail:-,extends:>,precedes:<
 
 " ======= syntastic ========= "
 set statusline+=%#warningmsg#
