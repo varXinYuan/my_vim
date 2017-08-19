@@ -37,6 +37,7 @@ Bundle 'majutsushi/tagbar'
 " Bundle 'yonchu/accelerated-smooth-scroll'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'Lokaltog/vim-easymotion'
 
 call vundle#end()            " required
 "filetype plugin indent on    " required
@@ -65,10 +66,12 @@ nmap <F9> :TagbarToggle<CR>
 " ======= 缩进显示 ======== "
 " let g:indent_guides_enable_on_vim_startup = 1
 " let g:indent_guides_guide_size = 1
-" "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-" "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
-" "hi IndentGuidesOdd  ctermbg=black
-" " highlight tabs and trailing spaces
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+" hi IndentGuidesOdd  ctermbg=black
+
+
+" ========= 高亮不妥当的空格和tab =========
 set list
 set listchars=tab:>-,trail:-,extends:>,precedes:<
 
@@ -91,17 +94,4 @@ let g:syntastic_php_phpcs_args=' --standard=PSR2 -n'
 map <F2> :NERDTreeToggle<CR>
 " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
  "autocmd VimEnter * NERDTree
-
-"php.vim
-"let g:php_syntax_extensions_enabled = 1
-"let b:php_syntax_extensions_enabled = 1
-"function! PhpSyntaxOverride()
-"    hi! def link phpDocTags  phpDefine
-"    hi! def link phpDocParam phpType
-"endfunction
-"
-"augroup phpSyntaxOverride
-"	autocmd!
-"    autocmd FileType php call PhpSyntaxOverride()
-"augroup END
 
