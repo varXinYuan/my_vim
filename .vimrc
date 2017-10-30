@@ -1,8 +1,9 @@
 set nocompatible              " be iMproved, required
 set encoding=utf-8
 set fileencoding=utf-8
-" filetype off                  " required
-"filetype plugin indent on
+filetype on
+filetype plugin on
+"filetype indent on
 
 " tmux设置 BEGIN
 if exists('$TMUX')
@@ -19,7 +20,7 @@ if exists('$ITERM_PROFILE')
 end
 " tmux设置 END
 
-" set the runtime path to include Vundle and initialize
+" ======= Vundle =======
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -39,17 +40,16 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Lokaltog/vim-easymotion'
 
-call vundle#end()            " required
-"filetype plugin indent on    " required
+call vundle#end()
 
 colorscheme monokai
 set nu
 set mouse=vi
 syntax on  "~G�~J�语~U~X亮
-syntax enable 
+syntax enable
 set cursorline     "当前行高亮
 "hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE    "高亮行颜色
-set hlsearch 
+set hlsearch
 hi Search ctermfg=17 ctermbg=190 guifg=#00005f guibg=#dfff00
 set autoindent
 set expandtab    " 将制表符扩展为空格
