@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/etc/network/if-up.d'
-let g:netrw_dirhist_2='/home/yuan/webroot/easytp/App/Common'
-let g:netrw_dirhist_3='/usr/local'
-let g:netrw_dirhist_4='/home/yuan/webroot/php_mail'
-let g:netrw_dirhist_5='/home/yuan/webroot/gongkaike/infoq'
-let g:netrw_dirhist_6='/usr/local/php/lib/php'
